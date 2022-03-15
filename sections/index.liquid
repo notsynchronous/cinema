@@ -1,0 +1,40 @@
+<div class="hero--hero_image" style="background-image: url({{ section.settings.hero_image | img_url: '1920x' }})"> 
+<div style="color: {{ settings.font_color }}" class="hero--call_to_action"> 
+{{section.settings.call_to_action }}
+</div>
+<div class="hero--url">
+<a href="{{section.settings.url }}">{{section.settings.call_to_action_button }}</a>
+</div>
+</div>
+
+  
+
+
+{% schema %}
+  {
+    "name": "Hero Image",
+    "settings": [
+      {
+        "id": "hero_image",
+        "type": "image_picker",
+        "label": "Hero Image"
+      },
+      {
+        "id": "call_to_action",
+        "type": "text",
+        "label": "Call To Action"
+      },
+      {
+          "id": "url",
+          "type": "url",
+          "label": "Link To"
+      }, 
+      {
+          "id":"call_to_action_button",
+          "type":"text",
+          "label":"Button Text",
+          "default":"Buy Now!"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Cinema",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https:\/\/github.com\/Shopify\/themekit",
+    "theme_support_url": "https:\/\/github.com\/Shopify\/themekit\/issues"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "id": "font_color",
+        "type": "color",
+        "label": "Text Color",
+        "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": "Announcements",
+    "settings": [
+      {
+        "id": "alert_is_active",
+        "type": "checkbox",
+        "label": "Is Announcment Active",
+        "default": false
+      },
+      {
+        "id": "alert_content",
+        "type": "richtext",
+        "label": "Content of Announcment"
+      }
+    ]
+  }
+]

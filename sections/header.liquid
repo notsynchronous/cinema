@@ -1,0 +1,27 @@
+{%if settings.alert_is_active %}
+{% include 'announcement' %}
+{%endif%}
+{% include 'menu' %}
+<div class="header--">
+
+<div onclick="(function(){ document.getElementById('menu').style.display == 'none' ? document.getElementById('menu').style.display = 'flex' : document.getElementById('menu').style.display = 'none'})() "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="42" height="42"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg> </div>
+
+
+
+<a href="/">name</a>
+
+  <a href="/cart">{{cart.items | size}}</a>
+
+  {% comment %} {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+      <a href="/account">account</a>
+      {{ 'log out'  | customer_logout_link }}
+    {% else %}
+      {{ 'log in ' | customer_login_link }}
+      {{ 'register' | customer_register_link }}
+    {% endif %}
+  {% endif %} {% endcomment %}
+
+</div>
+
+

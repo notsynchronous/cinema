@@ -1,0 +1,18 @@
+<div id="menu" class="menu--">
+{% for item in collections.all.products %}  
+<div class="menu--item"><a href="{{item.url}}">{{item.title}}</a></div>
+{%endfor%}
+<div class="menu--footer">
+    <div class="links"> 
+        <a href="/">About</a>
+        <a href="/">Blog</a>
+        <a href="/">FAQ</a> 
+    </div> 
+    <div class="social"> 
+    <a href="/">Instagram</a>
+<a href="/">Youtube</a>
+<a href="/">FAQ</a>
+    
+    </div> 
+</div>
+</div>

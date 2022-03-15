@@ -1,0 +1,9 @@
+<div id="announcement" onclick="(function(){  if(!localStorage.getItem('alert')){  document.getElementById('announcement').style.display='none';  localStorage.setItem('alert', 'true');}    })()" class="announcement">
+{{ settings.alert_content}}
+</div>
+
+
+<script>
+if(localStorage.getItem('alert')){  
+    document.getElementById('announcement').style.display='none'; }
+</script>

@@ -1,0 +1,494 @@
+// Put your styles in this file.
+// Shopify will compile SCSS/SASS on each deploy.
+// Note: "@import" rules aren’t supported.
+@font-face {
+    font-family: "Lunchtype Light";
+    src: url("lunchtype22-light-webfont.woff2") format("woff2"),
+         url("lunchtype22-light-webfont.woff") format("woff");
+}  
+
+@font-face {
+    font-family: "Lunchtype Medium";
+    src: url("lunchtype22-medium-webfont.woff2") format("woff2"),
+         url("lunchtype22-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Lunchtype Regular";
+    src: url("lunchtype22-regular-webfont.woff2") format("woff2"),
+         url("lunchtype22-regular-webfont.woff") format("woff");
+}
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+ * {
+     box-sizing: border-box;
+     font-family: Lunchtype Light;
+ } 
+
+ .announcement {
+     height: 50px;
+     font-family: Lunchtype Medium;
+     background-color: #003459;
+    color: #FFBBF8;
+    font-family: Lunchtype Medium;
+    display: flex;
+    padding: 0 15px;
+ }
+
+main {
+    width: 100%;
+    height: 100%;
+    
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+// MENU
+#menu {
+    display: none;
+}
+
+.menu-- {
+    
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: #003459;
+    color: #FFBBF8;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 20px;
+}
+
+
+.menu--item {
+    margin-bottom: 20px;
+}
+
+.menu--item a{
+    text-decoration: underline;
+    color: #FFBBF8;
+    font-size: 55px;
+    font-family: Lunchtype Medium !important;
+}
+
+.menu--footer {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.menu--footer .links, .menu--footer .social {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex: 1;
+}
+
+.menu--footer a{
+    text-decoration: none;
+    color: #FFBBF8;
+    font-size: 35px;
+    font-family: Lunchtype Medium !important;
+}
+
+// CART
+.cart-- {
+    padding-top: 55px;
+    height: 100%;
+    background: #FFBBF8;
+}
+.cart-- form {
+    padding-bottom: 85px;
+}
+
+.cart--update {
+    margin-left: 15px;
+    background: #003459;
+    color: #FFBBF8;
+    border: none;
+    padding: 5px 7px;
+    font-family: Lunchtype Medium !important;
+
+}
+
+.cart--update:focus{
+outline: none;
+}
+
+
+.cart--cart_item {
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    color: #003459;
+}
+
+.cart--cart_item_info {
+    font-family: Lunchtype Medium !important;
+    display: flex;
+    flex: 3 1 75%;
+    flex-direction: column;
+    border-bottom: 2px #003459 solid;
+}
+
+.cart--cart_item_info .title {
+    flex: 1;
+    font-size: 32px;
+    font-family: Lunchtype Medium !important;
+}
+
+.cart--cart_item_info .numbers {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Lunchtype Medium !important;
+
+}
+
+.cart--cart_item_info .total  {
+    display: flex;
+    font-family: Lunchtype Medium !important;
+    align-items: flex-end;
+}
+
+.cart--cart_item_info .quantity  {
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+    border: 2px #003459 solid;
+    width: 75px;
+    justify-content: space-evenly;
+}
+
+.cart--cart_item_info .quantity span {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart--cart_item_info .quantity input {
+    flex: 1;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+    background: none;
+    border: none;
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+    font-weight: bolder;
+    color: #003459 !important;
+}
+
+input[type=number]:focus {
+    outline: none;
+}
+
+.cart--cart_item_image {
+    display: flex;
+    flex: 1 1 25%;
+    margin-left: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cart--cart_item_image img {
+    // width: 80%;
+}
+
+.cart--subtotal {
+    height: 35px;
+    padding: 5px 7px;
+    width: 100%;
+    font-size: 20px;
+    border-top: 2px #003459 solid;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 50px;
+    background: #FFBBF8;
+    
+}
+
+.cart--subtitle, .cart--total {
+    font-family: Lunchtype Medium !important;
+    color: #003459;
+    
+}
+
+
+.checkout {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #003459;
+    color: #FFBBF8;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Lunchtype Medium;
+}
+// PRODUCT
+.product--info {
+    background-color: #FFBBF8;
+    padding: 15px;
+    color: #003459;
+}
+
+.product--info .title {
+    font-family: Lunchtype Medium;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.spr-badge {
+    margin-top: 10px;
+}
+
+#AddToCart {
+    border: none;
+    border-top: 1px solid #003459;
+    border-bottom: 1px solid #003459;
+    width: 100%;
+    height: 50px;
+    background-color: #FFBBF8;
+    color: #003459;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Lunchtype Medium;
+}
+
+.spr-container {
+    border: none !important;
+}
+
+.spr-review-header-byline {
+    color: #003459!important;
+}
+
+#shopify-product-reviews {
+    margin: 0 !important;
+    background-color: #FFBBF8;
+}
+
+.product--image, #imagebox {
+    width: 100%;
+    height: 50%;
+    background: #D1CAFF;
+    white-space: nowrap;
+    font-size: 0;
+    transform: translateX(0);
+    position: relative;
+}
+// https://codepen.io/AlexEmashev/pen/xZWNeV
+.slide {
+    width: 100%;
+    height: 100%;
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.animate {
+    transition: all .5s ease-out;
+  }
+
+
+.product--info .price {
+    margin-top: 15px;
+    font-family: Lunchtype Medium;
+    font-size: 48px;
+}
+
+.product--info .description {
+    margin-top: 15px;
+    font-family: Lunchtype Regular;
+    // font-weight: bolder;
+}
+
+// HEADER
+.header-- {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    padding: 5px 7px;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.header-- a {
+    color: {{ settings.font_color }};
+    font-size: 42px;
+}
+
+.header-- svg {
+    fill: {{ settings.font_color }};
+}
+
+// HERO
+.hero--hero_image {
+    width: 100%; 
+    height: 100vh;
+    background-position: center; 
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero--call_to_action {
+    font-size: 42px;
+    font-family: Lunchtype Medium;
+}
+
+.hero--url {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px 15px;
+    background-color: #FFBBF8;
+}
+
+.hero--url a {
+    font-family: Lunchtype Medium;
+}
+// FEATURED 
+.block-- {
+    width: 100%;
+    height: 175px;
+    background-size: cover;
+    background-color: #003459;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 15px;
+}
+
+.block-- div {
+    font-size: 32px;
+    font-family: Lunchtype Medium;
+}
+
+// NEWSLetter
+.news-- {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    color: #003459;
+    background-color: #D1CAFF;
+}
+
+
+.news--prompt {
+    font-size: 32px;
+    font-family: Lunchtype Medium;
+    background-color: #D1CAFF;
+}
+
+.news--email_box {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.news--input {
+    flex: 6 1;
+}
+
+.news--button {
+    flex: 1 1;
+    margin-left: 20px;
+}
+
+.news--button button{
+    background-color: #003459;
+    color: #d1caff;
+    border: none;
+    padding: 7px 10px;
+    appearance: none;
+    font-family: Lunchtype Regular;
+}
+
+
+.news--input input{
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #003459 !important;
+}
+
+.news--input input:focus{
+    outline: none;
+}
+
+// Footer
+.footer-- {
+    // height: 225px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #003459;
+    color: #D1CAFF;
+    font-family: Lunchtype Medium;
+}
+
+.footer-- a {
+    color: #D1CAFF;
+    font-family: Lunchtype Medium;
+    // font-size: 40px;
+    font-size: 24px;
+}
+
+.footer--links, .footer--copyright {
+    flex: 1 1;
+}
+
+.footer--pages, .footer--social {
+    flex: 1;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer--links {
+    display: flex;
+}
+
+.footer--copyright {
+    margin-top: 20px;
+}
+
+.footer--shopname {
+    font-size: 36px;
+    font-family: Lunchtype Medium;
+}

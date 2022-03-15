@@ -1,0 +1,33 @@
+
+{% for block in section.blocks %}  
+     {% assign product_item = all_products[block.settings.featured_movie] %}
+  <div class="block--" style="background-image: url({{product_item.images[1] | img_url: 'large' }})">   
+   <div> {{ product_item.title }}</div>
+  </div> 
+  {% endfor %}
+
+
+{% schema %}
+ {
+"name": "Featured Movie",
+"max_blocks": 2,
+    "settings": [
+      {
+        "id": "hero_image",
+        "type": "image_picker",
+        "label": "Hero Image"
+      }],
+      "blocks": [ {
+    "type": "small",
+    "name": "Featured Movie",
+    "settings": [
+        {
+            "id": "featured_movie",
+            "type": "product",
+            "label" : "Featured Movie"
+        }
+    ]
+      }
+] 
+ }
+{% endschema %}

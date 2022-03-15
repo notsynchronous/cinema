@@ -1,0 +1,46 @@
+<div class="cart--">
+{% if cart.item_count > 0 %}
+  <form action="/cart" method="post" novalidate>
+   {% comment %} <a href="{{ item.url }}">{{ item.product.title }}</a> {% endcomment %}     
+  {% comment %} <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a> {% endcomment %}
+  {% comment %} <input type="number"  value="{{ item.quantity }}" min="0"> {% endcomment %}
+        {% for item in cart.items %}
+        <div class="cart--cart_item">
+          <div class="cart--cart_item_info">
+              <div class="title">{{ item.product.title }}</div>
+              <div class="numbers">
+               <div class="quantity">
+               <span onclick="(function(){ document.getElementById('updates_{{ item.key }}').value = Number(document.getElementById('updates_{{ item.key }}').value) == 0 ?  Number(document.getElementById('updates_{{ item.key }}').value) = 0 :  Number(document.getElementById('updates_{{ item.key }}').value) - 1;   })()">-</span>
+               <input name="updates[]" id="updates_{{ item.key }}" type="number" min="0" value="{{ item.quantity }}" name=""/>
+               <span onclick="(function(){ document.getElementById('updates_{{ item.key }}').value = Number(document.getElementById('updates_{{ item.key }}').value) + 1;   })()">+</span>
+               </div>
+               <div class="total">
+               {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+              {{ item.line_price | money }}
+              {% for discount in item.discounts %}{{ discount.title }}{% endfor %} (x {{ item.quantity }})
+               </div>
+              </div> 
+            </div>
+            <div style="background-image: url('{{ item | img_url: 'medium' }}')" class="cart--cart_item_image">
+            {% comment %} <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}"> {% endcomment %}
+        
+              </div>
+        
+        </div>
+        
+        {% endfor %}
+    <div>
+      
+     
+      {% comment %} <button type="submit" name="checkout">Checkout</button> {% endcomment %}
+
+    </div>
+     <button class="cart--update" type="submit" name="update">Update</button>
+  </form>
+        <div class="cart--subtotal"><div class="cart--subtitle">Subtotal</div><div class="cart--total">{{ cart.total_price | money }}</div></div>
+      <div class="checkout">Checkout</div>
+{% else %}
+  {% comment %} <h2>cart</h2> {% endcomment %}
+  Cart is empty
+{% endif %}
+</div>

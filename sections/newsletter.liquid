@@ -1,0 +1,22 @@
+<div class="news--">
+<div class="news--prompt">
+{{ section.settings.copy }}
+</div>
+<div class="news--email_box">
+<div class="news--input"><input /></div>
+<div class="news--button"><button>Sign Up</button></div>
+</div>
+</div>
+
+{% schema %}
+ {
+"name": "Newsletter",
+    "settings": [
+      {
+        "id": "copy",
+        "type": "text",
+        "label": "Newsletter Prompt", 
+        "default": "Join our newsletter for exclusive access to movie news. "
+      }]
+ }
+{% endschema %}
